@@ -1,31 +1,30 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
+    <title>Deadlock Characters | Home</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
+    
   </head>
-
   <body>
+    <form class="search-container">
+      <input type="text" placeholder="Search.." id="search">
+      <button type="button" id="myBtn" >Search</button>
+    </form>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+        <img class = "main-img" src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/deadlock_alpha_2024.png"/>
     </header>
     <div id="card-container"></div>
     <div class="card" style="display: none">
       <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+        <img id = "Name" src="" alt="Hero Title"/>
+        <img id = "Hero" src="" alt="Hero Picture"/>
+        <p id="ability1">Test</p>
+        <p id="ability2">Test</p>
+        <p id="ability3">Test</p>
+        <p id="ability4">Test</p>
       </div>
-    </div>
-    <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
     </div>
   </body>
 </html>

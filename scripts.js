@@ -317,40 +317,103 @@ let CharacterList=[]
 //Function to initialize data/buttons
 function initialize(){
 
-  const btn = document.getElementById("myBtn");
-  btn.addEventListener("click", search);
+  const characterbtn = document.getElementById("characterButton");
+  characterbtn.addEventListener("click", characterSearch);
 
-  //Fill Array completely
+  const healthbtn = document.getElementById("healthButton");
+  healthbtn.addEventListener("click", healthSearch);
+  
+  const abilitybtn = document.getElementById("abilityButton");
+  abilitybtn.addEventListener("click", abilitySearch);
+
+  const reversebtn = document.getElementById("reverseButton");
+  reversebtn.addEventListener("click", reverseList);
+  
   for (const characterData of Object.values(Characters)) {
     CharacterList.push(characterData);
   }
+
   showCards();
+
+}
+function reverseList(){
+
+  CharacterList.reverse();
+  showCards();
+
 }
 
-function searchUpdate(searchText){
-  CharacterList.length=0;
+function healthSearch(){
 
-  if(Number(searchText)){
+  const searchText = document.getElementById("search").value;
+
+  //Only searches if user entered number/number is below 670
+  if(!Number(searchText)||Number(searchText<670)){
+    alert("Error, Enter Number Larger than 670 (Least Health in Roster)");
+  }
+
+  else {
+
+    CharacterList.length=0;
+
     for (const characterData of Object.values(Characters)) {
-      if(characterData.health<Number(searchText)){
+      if(characterData.health <= Number(searchText)){
         CharacterList.push(characterData);
       }
     }
+    //function for easier readablity
     sortByHealth();
+
   }
+
+  showCards();
   
-  //Filter to Just Characters that fit criteria
+}
+
+function abilitySearch(){
+
+  CharacterList.length = 0;
+  const searchText = document.getElementById("search").value;
+  let abilityNumbers = []
+  for(const characterData of Object.values(Characters)){
+    for(let i=0; i<4;i++){
+      if(characterData.abilities[i].toLowerCase().includes(searchText.toLowerCase())){
+
+        console.log(characterData.abilities[i]);
+        
+        CharacterList.push(characterData);
+        abilityNumbers.push(characterData.abilities[i].toLowerCase());
+        i=4;
+      }
+    }
+  }
+  showCards();
+
+}
+
+
+function characterSearch(){
+
+  CharacterList.length=0;
+  const searchText = document.getElementById("search").value;
+
+  //First Finds only objects that start with value
   for (const characterData of Object.values(Characters)) {
-    if(characterData.name.toLowerCase().includes(searchText.toLowerCase())){
+    if(characterData.name.toLowerCase().startsWith(searchText.toLowerCase())){
       CharacterList.push(characterData);
     }
   }
-}
+  //Adds any object that contains the value, except objects already in array
+  for (const characterData of Object.values(Characters)) {
+    if(characterData.name.toLowerCase().includes(searchText.toLowerCase())){
+      if(!CharacterList.includes(characterData)){
+        CharacterList.push(characterData);
+      }
+    }
+  }
 
-function search(){
-  const searchText = document.getElementById("search").value;
-  searchUpdate(searchText);
   showCards();
+
 }
 
 function sortByHealth(){
@@ -364,7 +427,7 @@ function showCards() {
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  // Loop for creating new Cards from our data set
+  // Loop for creating new Cards from our changeable data set
   for (const characterData of CharacterList) {
     const nextCard = templateCard.cloneNode(true); // Copy the template card
     editCardContent(nextCard, characterData); // Edit Title, Image, Text
@@ -392,6 +455,7 @@ function editCardContent(card, characterData) {
   element2.textContent = characterData.abilities[2];
   const element3 = card.querySelector("#ability4");
   element3.textContent = characterData.abilities[3];
+
   const element4=card.querySelector("#health");
   element4.textContent = characterData.health;
   

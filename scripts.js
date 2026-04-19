@@ -1,28 +1,8 @@
 /**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- *
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your
- *    browser and make sure you can see that change.
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- *
+ *  The data set used is full of data we don't want the user to be able to change, due to this
+ *  when parsing data we use an array that can be changed, this means we don't lose data, but
+ *  can still change what is being show on screen.
  */
-
 const Characters = {
   Abrams: {
     name: "Abrams",
@@ -330,36 +310,52 @@ const Characters = {
   }
 };
 
-function search(){
-  const searchText = document.getElementById("search").value;
-  const searchCharacters = []
-    for (const characterData of Object.values(Characters)) {
-      if(characterData.name.toLowerCase().includes(searchText.toLowerCase())){
-        searchCharacters.push(characterData)
-      }
+
+//Array that can be changed, used for actual info parsing.
+let CharacterList=[]
+
+//Function to initialize data/buttons
+function initialize(){
+  const btn = document.getElementById("myBtn");
+  btn.addEventListener("click", search);
+
+  for (const characterData of Object.values(Characters)) {
+    CharacterList.push(characterData);
   }
-  if(searchCharacters.length == 0){
-    console.log("Empty");
-  }
-  for(let i=0; i< searchCharacters.length; i++){
-    console.log(searchCharacters[i].name);
+  showCards();
+}
+
+function searchUpdate(searchText){
+  //Empty out Character List
+  CharacterList.length=0;
+  for (const characterData of Object.values(Characters)) {
+    if(characterData.name.toLowerCase().includes(searchText.toLowerCase())){
+      CharacterList.push(characterData);
+    }
   }
 }
 
+function search(){
+  const searchText = document.getElementById("search").value;
+  searchUpdate(searchText);
+  showCards();
+
+}
+
 // This function adds cards the page to display the data in the array
-function showCards(characterList) {
-  const btn = document.getElementById("myBtn");
-  btn.addEventListener("click", search);
+function showCards() {
   
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
+
   // Loop for creating new Cards from our data set
-  for (const characterData of Object.values(Characters)) {
+  for (const characterData of CharacterList) {
     const nextCard = templateCard.cloneNode(true); // Copy the template card
     editCardContent(nextCard, characterData); // Edit Title, Image, Text
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
+
 }
 
 function editCardContent(card, characterData) {
@@ -386,7 +382,5 @@ function editCardContent(card, characterData) {
   console.log("new card:", characterData.name, "- html: ", card);
 }
 
-// This calls the showCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
-
+// This calls the intialize() function when the page is first loaded
+document.addEventListener("DOMContentLoaded", initialize);

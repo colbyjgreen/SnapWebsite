@@ -316,9 +316,11 @@ let CharacterList=[]
 
 //Function to initialize data/buttons
 function initialize(){
+
   const btn = document.getElementById("myBtn");
   btn.addEventListener("click", search);
 
+  //Fill Array completely
   for (const characterData of Object.values(Characters)) {
     CharacterList.push(characterData);
   }
@@ -326,8 +328,18 @@ function initialize(){
 }
 
 function searchUpdate(searchText){
-  //Empty out Character List
   CharacterList.length=0;
+
+  if(Number(searchText)){
+    for (const characterData of Object.values(Characters)) {
+      if(characterData.health<Number(searchText)){
+        CharacterList.push(characterData);
+      }
+    }
+    sortByHealth();
+  }
+  
+  //Filter to Just Characters that fit criteria
   for (const characterData of Object.values(Characters)) {
     if(characterData.name.toLowerCase().includes(searchText.toLowerCase())){
       CharacterList.push(characterData);
@@ -339,7 +351,10 @@ function search(){
   const searchText = document.getElementById("search").value;
   searchUpdate(searchText);
   showCards();
+}
 
+function sortByHealth(){
+  CharacterList.sort((a,b)=> b.health - a.health);
 }
 
 // This function adds cards the page to display the data in the array
@@ -377,7 +392,9 @@ function editCardContent(card, characterData) {
   element2.textContent = characterData.abilities[2];
   const element3 = card.querySelector("#ability4");
   element3.textContent = characterData.abilities[3];
-
+  const element4=card.querySelector("#health");
+  element4.textContent = characterData.health;
+  
   //Bug Testing Console Logger
   console.log("new card:", characterData.name, "- html: ", card);
 }

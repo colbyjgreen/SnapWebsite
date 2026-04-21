@@ -1,10 +1,8 @@
 /**
- *  The data set used is full of data we don't want the user to be able to change, due to this
- *  when parsing data we use an array that can be changed, this means we don't lose data, but
- *  can still change what is being show on screen.
+ *  Array of Objects for our characters. Since this isn't something the user will change, we set as const.
  */
-const Characters = {
-  Abrams: {
+const Characters = [
+  Abrams= {
     name: "Abrams",
     iconURL: "https://deadlock.wiki/images/thumb/6/6d/Abrams_card.png/190px-Abrams_card.png",
     titleURL: "https://deadlock.wiki/images/thumb/1/11/Abrams_name.png/121px-Abrams_name.png",
@@ -12,7 +10,7 @@ const Characters = {
     health: 810,
     style: "Tank - Brawler - Bull-Headed"
   },
-  Apollo: {
+  Apollo= {
     name: "Apollo",
     iconURL: "https://deadlock.wiki/images/thumb/0/0f/Apollo_card.png/190px-Apollo_card.png",
     titleURL: "https://deadlock.wiki/images/thumb/f/f2/Apollo_name.png/107px-Apollo_name.png",
@@ -20,7 +18,7 @@ const Characters = {
     health: 780,
     style: "Finesse - Mobility - A Cut Above"
   } ,
-  Bebop: {
+  Bebop= {
     name: "Bebop",
     iconURL: "https://deadlock.wiki/images/thumb/4/49/Bebop_card.png/190px-Bebop_card.png",
     titleURL: "https://deadlock.wiki/images/thumb/5/5b/Bebop_name.png/71px-Bebop_name.png",
@@ -28,7 +26,7 @@ const Characters = {
     health: 890,
     style: "Hook - Bomb - Punch"
   },
-  Billy: {
+  Billy= {
     name: "Billy",
     iconURL: "https://deadlock.wiki/images/thumb/e/e5/Billy_card.png/190px-Billy_card.png",
     titleURL: "https://deadlock.wiki/images/thumb/5/57/Billy_name.png/97px-Billy_name.png",
@@ -36,7 +34,7 @@ const Characters = {
     health: 830,
     style: "Punk - Chaotic - G.O.A.T."
   },
-  Calico: { 
+  Calico= { 
     name: "Calico", 
     iconURL: "https://deadlock.wiki/images/thumb/e/e4/Calico_card.png/190px-Calico_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/d/d5/Calico_name.png/80px-Calico_name.png" ,
@@ -44,7 +42,7 @@ const Characters = {
     health: 740,
     style: "Tricksy - Slippery - Burst Damage"
   },
-  Celeste: { 
+  Celeste= { 
     name: "Celeste", 
     iconURL: "https://deadlock.wiki/images/thumb/9/90/Celeste_card.png/190px-Celeste_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/e/ee/Celeste_name.png/80px-Celeste_name.png" ,
@@ -52,7 +50,7 @@ const Characters = {
     health: 700,
     style: "Performer - Disruptive - Dazzling"
   },
-  Doorman: { 
+  Doorman= { 
     name: "Doorman", 
     iconURL: "https://deadlock.wiki/images/thumb/6/6f/The_Doorman_card.png/190px-The_Doorman_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/1/15/The_Doorman_name.png/156px-The_Doorman_name.png" ,
@@ -60,7 +58,7 @@ const Characters = {
     health: 765,
     style: "Disorienting - Map Control - Mind Games"
   },
-  Drifter: { 
+  Drifter= { 
     name: "Drifter", 
     iconURL: "https://deadlock.wiki/images/thumb/4/4d/Drifter_card.png/190px-Drifter_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/3/32/Drifter_name.png/137px-Drifter_name.png" ,
@@ -68,7 +66,7 @@ const Characters = {
     health: 765,
     style: "Stalker - Bloodthirsty - Cruel"
   },
-  Dynamo: { 
+  Dynamo= { 
     name: "Dynamo", 
     iconURL: "https://deadlock.wiki/images/thumb/7/70/Dynamo_card.png/190px-Dynamo_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/8/8f/Dynamo_name.png/131px-Dynamo_name.png" ,
@@ -76,7 +74,7 @@ const Characters = {
     health: 890,
     style: "Teamplay - Initiator - Clutch"
   },
-  Graves: { 
+  Graves= { 
     name: "Graves", 
     iconURL: "https://deadlock.wiki/images/thumb/3/35/Graves_card.png/190px-Graves_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/e/e6/Graves_name.png/165px-Graves_name.png" ,
@@ -84,7 +82,7 @@ const Characters = {
     health: 740,
     style: "Morbid - Area Denial - Necromancer"
   },
-  GreyTalon: { 
+  GreyTalon= { 
     name: "GreyTalon", 
     iconURL: "https://deadlock.wiki/images/thumb/5/5a/Grey_Talon_card.png/190px-Grey_Talon_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/f/f4/Grey_Talon_name.png/186px-Grey_Talon_name.png" ,
@@ -92,7 +90,7 @@ const Characters = {
     health: 790,
     style: "Precision - Hunter - Area Denial"
   },
-  Haze: { 
+  Haze= { 
     name: "Haze", 
     iconURL: "https://deadlock.wiki/images/thumb/1/1b/Haze_card.png/190px-Haze_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/7/75/Haze_name.png/238px-Haze_name.png" ,
@@ -100,7 +98,7 @@ const Characters = {
     health: 740,
     style: "Assassin - Stealthy - Lethal"
   },
-  Holliday: { 
+  Holliday= { 
     name: "Holliday", 
     iconURL: "https://deadlock.wiki/images/thumb/1/10/Holliday_card.png/190px-Holliday_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/4/49/Holliday_name.png/126px-Holliday_name.png" ,
@@ -108,7 +106,7 @@ const Characters = {
     health: 790,
     style: "Crackshot - Explosive - Apprehender"
   },
-  Infernus: { 
+  Infernus= { 
     name: "Infernus", 
     iconURL: "https://deadlock.wiki/images/thumb/6/6b/Infernus_card.png/190px-Infernus_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/e/e1/Infernus_name.png/167px-Infernus_name.png" ,
@@ -116,7 +114,7 @@ const Characters = {
     health: 840,
     style: "Arsonist - Explosive - Burn Rubber"
   },
-  Ivy: { 
+  Ivy= { 
     name: "Ivy", 
     iconURL: "https://deadlock.wiki/images/thumb/2/2c/Ivy_card.png/190px-Ivy_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/a/a6/Ivy_name.png/88px-Ivy_name.png" ,
@@ -124,7 +122,7 @@ const Characters = {
     health: 765,
     style: "Team-up - Disruptor - Rock Solid"
   },
-  Kelvin: { 
+  Kelvin= { 
     name: "Kelvin", 
     iconURL: "https://deadlock.wiki/images/thumb/7/76/Kelvin_card.png/190px-Kelvin_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/1/1c/Kelvin_name.png/98px-Kelvin_name.png" ,
@@ -132,7 +130,7 @@ const Characters = {
     health: 890,
     style: "Protector - Explorer - Ice Cold"
   },
-  LadyGeist: { 
+  LadyGeist= { 
     name: "LadyGeist", 
     iconURL: "https://deadlock.wiki/images/thumb/e/e8/Lady_Geist_card.png/190px-Lady_Geist_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/3/3e/Lady_Geist_name.png/183px-Lady_Geist_name.png" ,
@@ -140,7 +138,7 @@ const Characters = {
     health: 890,
     style: "Lifesteal - Self Damage - Fatale"
   },
-  Lash: { 
+  Lash= { 
     name: "Lash", 
     iconURL: "https://deadlock.wiki/images/thumb/5/5a/Lash_card.png/190px-Lash_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/f/f7/Lash_name.png/100px-Lash_name.png" ,
@@ -148,7 +146,7 @@ const Characters = {
     health: 790,
     style: "Initiator - High Flying - Arrogant"
   },
-  McGinnis: { 
+  McGinnis= { 
     name: "McGinnis", 
     iconURL: "https://deadlock.wiki/images/thumb/5/55/McGinnis_card.png/190px-McGinnis_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/c/c4/McGinnis_name.png/141px-McGinnis_name.png" ,
@@ -156,7 +154,7 @@ const Characters = {
     health: 790,
     style: "Inventor - Support - Disruption"
   },
-  Mina: { 
+  Mina= { 
     name: "Mina", 
     iconURL: "https://deadlock.wiki/images/thumb/a/a5/Mina_card.png/190px-Mina_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/a/a7/Mina_name.png/91px-Mina_name.png" ,
@@ -164,7 +162,7 @@ const Characters = {
     health: 670,
     style: "Harasser - Nimble - Vexing"
   },
-  Mirage: { 
+  Mirage= { 
     name: "Mirage", 
     iconURL: "https://deadlock.wiki/images/thumb/7/77/Mirage_card.png/190px-Mirage_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/e/e9/Mirage_name.png/83px-Mirage_name.png" ,
@@ -172,7 +170,7 @@ const Characters = {
     health: 740,
     style: "Bodyguard - Traveller - Focused"
   },
-  MoKrill: { 
+  MoKrill= { 
     name: "MoKrill", 
     iconURL: "https://deadlock.wiki/images/thumb/a/a1/Mo_%26_Krill_card.png/190px-Mo_%26_Krill_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/0/02/Mo_%26_Krill_name.png/114px-Mo_%26_Krill_name.png" ,
@@ -180,7 +178,7 @@ const Characters = {
     health: 940,
     style: "Tag-Team - Initiator - Burrower"
   },
-  Paige: { 
+  Paige= { 
     name: "Paige", 
     iconURL: "https://deadlock.wiki/images/thumb/b/b0/Paige_card.png/190px-Paige_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/d/d6/Paige_name.png/69px-Paige_name.png" ,
@@ -188,7 +186,7 @@ const Characters = {
     health: 690,
     style: "Helpful - Protector - Booksmart"
   },
-  Paradox: {
+  Paradox= {
     name: "Paradox", 
     iconURL: "https://deadlock.wiki/images/thumb/0/08/Paradox_card.png/190px-Paradox_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/6/6e/Paradox_name.png/225px-Paradox_name.png" ,
@@ -196,7 +194,7 @@ const Characters = {
     health: 740,
     style: "Calculated - Disruptor - Tactician"
   },
-  Pocket: { 
+  Pocket= { 
     name: "Pocket", 
     iconURL: "https://deadlock.wiki/images/thumb/0/06/Pocket_card.png/190px-Pocket_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/6/62/Pocket_name.png/53px-Pocket_name.png" ,
@@ -204,7 +202,7 @@ const Characters = {
     health: 790,
     style: "Trickster - Burst Damage - Frogs"
   },
-  Rem: { 
+  Rem= { 
     name: "Rem", 
     iconURL: "https://deadlock.wiki/images/thumb/2/2a/Rem_card.png/190px-Rem_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/8/81/Rem_name.png/36px-Rem_name.png" ,
@@ -212,7 +210,7 @@ const Characters = {
     health: 690,
     style: "Helpful - Tiny - zZzzZ"
   },
-  Seven: { 
+  Seven= { 
     name: "Seven", 
     iconURL: "https://deadlock.wiki/images/thumb/c/cf/Seven_card.png/190px-Seven_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/9/93/Seven_name.png/114px-Seven_name.png" ,
@@ -220,7 +218,7 @@ const Characters = {
     health: 740,
     style: "High Voltage - Merciless - Area Denial"
   },
-  Shiv: { 
+  Shiv= { 
     name: "Shiv", 
     iconURL: "https://deadlock.wiki/images/thumb/b/b8/Shiv_card.png/190px-Shiv_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/9/9d/Shiv_name.png/102px-Shiv_name.png" ,
@@ -228,7 +226,7 @@ const Characters = {
     health: 840,
     style: "Rage - Bleed - Repeat"
   },
-  Silver: { 
+  Silver= { 
     name: "Silver", 
     iconURL: "https://deadlock.wiki/images/thumb/1/1e/Silver_card.png/190px-Silver_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/b/b5/Silver_name.png/86px-Silver_name.png" ,
@@ -236,7 +234,7 @@ const Characters = {
     health: 840,
     style: "Feral - Hot Mess - Transformation"
   },
-  Sinclair: { 
+  Sinclair= { 
     name: "Sinclair", 
     iconURL: "https://deadlock.wiki/images/thumb/4/41/Sinclair_card.png/190px-Sinclair_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/f/f0/Sinclair_name.png/94px-Sinclair_name.png" ,
@@ -244,7 +242,7 @@ const Characters = {
     health: 740,
     style: "Trickster - Copycat - Versatile"
   },
-  Venator: { 
+  Venator= { 
     name: "Venator", 
     iconURL: "https://deadlock.wiki/images/thumb/6/6e/Venator_card.png/190px-Venator_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/4/4f/Venator_name.png/127px-Venator_name.png" ,
@@ -252,7 +250,7 @@ const Characters = {
     health: 790,
     style: "Devout - Arms Expert - Tactical"
   },
-  Victor: { 
+  Victor= { 
     name: "Victor", 
     iconURL: "https://deadlock.wiki/images/thumb/3/3d/Victor_card.png/190px-Victor_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/5/5a/Victor_name.png/138px-Victor_name.png" ,
@@ -260,7 +258,7 @@ const Characters = {
     health: 810,
     style: "You - Can't - Kill Me"
   },
-  Vindicta: { 
+  Vindicta= { 
     name: "Vindicta", 
     iconURL: "https://deadlock.wiki/images/thumb/6/69/Vindicta_card.png/190px-Vindicta_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/a/a7/Vindicta_name.png/189px-Vindicta_name.png" ,
@@ -268,7 +266,7 @@ const Characters = {
     health: 765,
     style: "Sniper - Soaring - One Shot Kill"
   },
-  Viscous: { 
+  Viscous= { 
     name: "Viscous", 
     iconURL: "https://deadlock.wiki/images/thumb/5/53/Viscous_card.png/190px-Viscous_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/3/3f/Viscous_name.png/108px-Viscous_name.png" ,
@@ -276,7 +274,7 @@ const Characters = {
     health: 790,
     style: "Evasive - Disruptor - Gooey"
   },
-  Vyper: { 
+  Vyper= { 
     name: "Vyper", 
     iconURL: "https://deadlock.wiki/images/thumb/b/bd/Vyper_card.png/190px-Vyper_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/c/c6/Vyper_name.png/76px-Vyper_name.png" ,
@@ -284,7 +282,7 @@ const Characters = {
     health: 790,
     style: "Gunner - Slippery - Rat-a-Tat"
   },
-  Warden: { 
+  Warden= { 
     name: "Warden", 
     iconURL: "https://deadlock.wiki/images/thumb/1/10/Warden_card.png/190px-Warden_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/3/31/Warden_name.png/195px-Warden_name.png" ,
@@ -292,7 +290,7 @@ const Characters = {
     health: 815,
     style: "Initiator - Fearless - One Man Army"
   },
-  Wraith: { 
+  Wraith= { 
     name: "Wraith", 
     iconURL: "https://deadlock.wiki/images/thumb/8/85/Wraith_card.png/190px-Wraith_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/9/98/Wraith_name.png/143px-Wraith_name.png" ,
@@ -300,7 +298,7 @@ const Characters = {
     health: 740,
     style: "Duelist - Isolator - Telekinetic"
   },
-  Yamato: { 
+  Yamato= { 
     name: "Yamato", 
     iconURL: "https://deadlock.wiki/images/thumb/2/2b/Yamato_card.png/190px-Yamato_card.png", 
     titleURL: "https://deadlock.wiki/images/thumb/8/8c/Yamato_name.png/189px-Yamato_name.png" ,
@@ -308,11 +306,11 @@ const Characters = {
     health: 740,
     style: "Relentless - Acrobatics - Pursuer"
   }
-};
+];
 
 
-//Array that can be changed, used for actual info parsing.
-let CharacterList=[]
+//Array that can be changed. We don't want to change the original array, as we will use it for filtering later.
+let characterList=[]
 
 //Function to initialize data/buttons
 function initialize(){
@@ -329,96 +327,96 @@ function initialize(){
   const reversebtn = document.getElementById("reverseButton");
   reversebtn.addEventListener("click", reverseList);
   
-  for (const characterData of Object.values(Characters)) {
-    CharacterList.push(characterData);
-  }
-
+  characterList=Characters;
   showCards();
 
 }
+
+//Reverses Array we use for display and redisplays cards
 function reverseList(){
 
-  CharacterList.reverse();
-  showCards();
+  characterList.reverse();
+  showCards(); //required for refreshing page
 
 }
 
-function healthSearch(){
-
+//Filter by health
+function healthFilter(character){
   const searchText = document.getElementById("search").value;
 
-  //Only searches if user entered number/number is below 670
-  if(!Number(searchText)||Number(searchText<670)){
-    alert("Error, Enter Number Larger than 670 (Least Health in Roster)");
+  if (character.health < searchText) {
+    return true;
   }
 
+  return false;
+}
+
+//Search by Health
+function healthSearch(){
+
+  characterList=Characters;
+
+  characterList=characterList.filter(healthFilter);
+
+  //If length is 0 we reset it to full and don't update to filter by health
+  if (characterList.length==0) {
+    alert("Error criteria not met (Enter a number greater than 670");
+    characterList=Characters;
+  }
+  //Since we have values we can then sort by health. 
   else {
-
-    CharacterList.length=0;
-
-    for (const characterData of Object.values(Characters)) {
-      if(characterData.health <= Number(searchText)){
-        CharacterList.push(characterData);
-      }
-    }
-    //function for easier readablity
-    sortByHealth();
-
+    characterList.sort((a,b)=> b.health - a.health);
   }
 
   showCards();
   
 }
 
+//Search by Ability
 function abilitySearch(){
-
-  CharacterList.length = 0;
-  const searchText = document.getElementById("search").value;
-  let abilityNumbers = []
-  for(const characterData of Object.values(Characters)){
-    for(let i=0; i<4;i++){
-      if(characterData.abilities[i].toLowerCase().includes(searchText.toLowerCase())){
-
-        console.log(characterData.abilities[i]);
-        
-        CharacterList.push(characterData);
-        abilityNumbers.push(characterData.abilities[i].toLowerCase());
-        i=4;
-      }
-    }
-  }
+  //On Every search we reset our list to full in order to parse again
+  characterList = Characters;
+  characterList=characterList.filter(abilityFilter);
   showCards();
 
 }
 
+//Filter by ability
+function abilityFilter(character){
 
+  const searchValue = document.getElementById("search").value;
+
+  //Joins entire array of abilities so we don't have to run a loop
+  if(character.abilities.join().includes(searchValue)){
+      return false;
+  }
+
+  return true;
+
+}
+
+//Sorts by Character
 function characterSearch(){
 
-  CharacterList.length=0;
-  const searchText = document.getElementById("search").value;
-
-  //First Finds only objects that start with value
-  for (const characterData of Object.values(Characters)) {
-    if(characterData.name.toLowerCase().startsWith(searchText.toLowerCase())){
-      CharacterList.push(characterData);
-    }
-  }
-  //Adds any object that contains the value, except objects already in array
-  for (const characterData of Object.values(Characters)) {
-    if(characterData.name.toLowerCase().includes(searchText.toLowerCase())){
-      if(!CharacterList.includes(characterData)){
-        CharacterList.push(characterData);
-      }
-    }
-  }
-
+  characterList=Characters;
+  characterList=characterList.filter(filterCharacters);
   showCards();
 
 }
 
-function sortByHealth(){
-  CharacterList.sort((a,b)=> b.health - a.health);
+//Filters by Character
+function filterCharacters(character){
+
+  const searchText = document.getElementById("search").value;
+
+  if(character.name.includes(searchText)){
+    return true;
+  }
+
+  return false;
+
 }
+
 
 // This function adds cards the page to display the data in the array
 function showCards() {
@@ -428,7 +426,7 @@ function showCards() {
   const templateCard = document.querySelector(".card");
 
   // Loop for creating new Cards from our changeable data set
-  for (const characterData of CharacterList) {
+  for (const characterData of characterList) {
     const nextCard = templateCard.cloneNode(true); // Copy the template card
     editCardContent(nextCard, characterData); // Edit Title, Image, Text
     cardContainer.appendChild(nextCard); // Add new card to the container
@@ -436,9 +434,11 @@ function showCards() {
 
 }
 
+//Sets out card data when we update list
 function editCardContent(card, characterData) {
 
   card.style.display = "block";
+  //On click we show Character Style
   card.addEventListener("click", function(){alert(characterData.style)});
 
   const cardTitle = card.querySelector("#Name");
@@ -447,6 +447,7 @@ function editCardContent(card, characterData) {
   const cardImage = card.querySelector("#Hero");
   cardImage.src = characterData.iconURL;
 
+  //Unsure if this is an optimal way to do this, not a big fan of how i did it.
   const element = card.querySelector("#ability1");
   element.textContent = characterData.abilities[0];
   const element1 = card.querySelector("#ability2");

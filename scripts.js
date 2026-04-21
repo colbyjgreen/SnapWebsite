@@ -387,7 +387,7 @@ function abilityFilter(character){
   const searchValue = document.getElementById("search").value;
 
   //Joins entire array of abilities so we don't have to run a loop
-  if(character.abilities.join().includes(searchValue)){
+  if(character.abilities.join().toLowerCase().includes(searchValue.toLowerCase())){
       return false;
   }
 
@@ -409,7 +409,7 @@ function filterCharacters(character){
 
   const searchText = document.getElementById("search").value;
 
-  if(character.name.includes(searchText)){
+  if(character.name.toLowerCase().includes(searchText.toLowerCase())){
     return true;
   }
 

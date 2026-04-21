@@ -360,7 +360,7 @@ function healthSearch(){
 
   //If length is 0 we reset it to full and don't update to filter by health
   if (characterList.length==0) {
-    alert("Error criteria not met (Enter a number greater than 670");
+    alert("Error criteria not met (Enter a number greater than 670)");
     characterList=Characters;
   }
   //Since we have values we can then sort by health. 

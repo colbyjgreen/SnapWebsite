@@ -388,10 +388,10 @@ function abilityFilter(character){
 
   //Joins entire array of abilities so we don't have to run a loop
   if(character.abilities.join().toLowerCase().includes(searchValue.toLowerCase())){
-      return false;
+      return true;
   }
 
-  return true;
+  return false;
 
 }
 
